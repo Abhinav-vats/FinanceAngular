@@ -54,10 +54,8 @@ export class LoginComponent implements OnInit {
             }
             else {
               this.message = "";
-<<<<<<< HEAD
               this.router.navigate(['/dashboard']);
               //alert(data.message);
-=======
               let customerId: any = data.userId
               
 
@@ -75,7 +73,6 @@ export class LoginComponent implements OnInit {
                 sessionStorage.setItem("customerId", customerId);
                 
               }
->>>>>>> 908df8a9d27685be8fe3cbd8b040762750d9986e
             }
           }
         }
