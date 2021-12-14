@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    background-color: #ffffff;
+    font-family: 'Mulish', sans-serif;
+}
+
+.main {
+    margin: -9px;
+}
+
+.footer {
+    background-color: #0e2e4e;
+    height: 50px;
+    color: white;
+    overflow: hidden;
+    padding: 40px 10px 10px 30px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.navbar {
+    background-color: #0e2e4e;
+    color: white;
+    overflow: hidden;
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 10px;
+}
+
+.navbar a {
+    border-radius: 5px;
+    float: left;
+    display: block;
+    padding: 15px;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: black;
+}
+
+.navbar img {
+    width: 70px;
+    height: 50px;
+}
+
+.sp-alert {
+    color: red;
+    font-size: small;
+}
+
+.sp-success {
+    color: green;
+    font-size: small;
+}
+
+.outter-div {
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button:focus {
+    outline: none !important;
+    border-color: #2a4d70;
+    box-shadow: 0 0 10px #36638d;
+}
+
+table {
+    margin: 0 auto;
+}
+
+tr {
+    background-color: aliceblue;
+}
+
+th {
+    padding: 20px;
+    width: 250px;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #119797;
+    color: white;
+}
+
+td {
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+}

@@ -1,0 +1,85 @@
+<div class="outter-div">
+    <div class="product-list">
+        <div class="product-img-div">
+
+
+            <!-- <img src="https://rukminim1.flixcart.com/image/312/312/k1fbmvk0/mobile/k/b/e/mi-redmi-8-mzb8250in-original-imafhyabpggagngr.jpeg?q=70" alt=" " />-->
+            <img src="{{productInfoDto.imagePath}}" alt=" " />
+
+        </div>
+        <div class="product-detail-div">
+            <div class="lab">
+                <div class="inner-lab">Product Name :</div>
+                <div class="data">{{productInfoDto.name}}</div>
+            </div>
+            <div class="lab">
+                <div class="inner-lab">Product Detail :</div>
+                <div class="data">
+                    {{productInfoDto.detail}}
+                </div>
+            </div>
+            <div class="lab">
+                <div class="inner-lab">Price :</div>
+                <div class="data">
+                    {{productInfoDto.costPerUnit}}
+                </div>
+            </div>
+
+            <div class="lab">
+                <div class="inner-lab">EMI Period: </div>
+                <div class="data">
+                    <select name="bank" id="bank" [(ngModel)]=plan>
+                        <option name="three" id="three" value="3">3 Months
+                        <option name="six" id="six" value="6" >6  Months
+                        <option name="nine" id="nine" value="9" >9  Months
+                    </select>
+                </div>
+            </div>
+
+            <div class="lab">
+                <div class="inner-lab">EMI Starting :</div>
+                <div class="data">
+                    <!-- Updates on changing EMI Period-->
+                    {{productInfoDto.emiStarting}}
+                </div>
+            </div>
+
+
+            <div class="lab" *ngIf="perMonthInstallment">
+                <div class="inner-lab"> Per Month EMI</div>
+                <div class="data">
+
+                    {{perMonthInstallment}}
+                </div>
+            </div>
+
+            <div class="lab" *ngIf="rem">
+                <div class="inner-lab">Last Month EMI</div>
+                <div class="data">
+                    {{ perMonthInstallment + rem }}
+                </div>
+            </div>
+
+
+            <div class="lab-btn">
+                <button class="btn-buy" (click)="checkInstallment()">Check Installment</button>
+            </div>
+
+            <div class="lab-btn">
+
+                <!--  <button class="btn-buy" (click)="orderBook()">Pay now</button>-->
+
+                <button class="btn-buy" (click)="orderBook()" type="submit">Order now</button>
+
+            </div>
+            <div class="lab">
+                <div class="inner-lab">
+                    <a href="tandc.html" style="width: 300px;">Terms & Conditions</a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

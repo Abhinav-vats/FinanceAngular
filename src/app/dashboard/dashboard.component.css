@@ -1,0 +1,82 @@
+.outter-div {
+    text-align: center;
+    background-color: #d4d4d4;
+}
+
+.outer-div-err {
+    text-align: center;
+    margin: 0 auto;
+    background-color: #d4d4d4;
+    height: 400px;
+}
+
+.det-card {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #00000033;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.credit-det-card {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #00000033;
+    padding: 20px;
+}
+
+.product-list {
+    box-shadow: 0 4px 8px 0 #00000033;
+    background-color: #e0f5f3;
+    padding-top: 10px;
+    margin: 10px;
+}
+
+.inner-lab {
+    float: left;
+    width: 150px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #eeeac5;
+}
+
+.lab {
+    font-size: large;
+    padding-bottom: 20px;
+}
+
+.data {
+    font-weight: bold;
+    display: inline;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding-top: 1px;
+}
+
+.activation-status {
+    margin-left: -20px;
+    color: whitesmoke;
+    height: 30px;
+    padding-top: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #058305;
+}
+
+.btn-reg {
+    background-color: #2f7004;
+    width: 40%;
+    color: white;
+    outline: none !important;
+    border-color: #265c04;
+    height: 40px;
+    border-radius: 5px;
+    margin: 20px;
+}

@@ -1,0 +1,38 @@
+<div class="container" id="content">
+
+    <!-- Jumbotron Header -->
+    <div class="jumbotron home-spacer" id="products-jumbotron">
+        <h1>Welcome to the Finance Solution !</h1>
+        <p>We have the best cameras, Phones and excited gadgets for you at no cost EMI . No need to hunt around, we have all in one place.</p>
+
+    </div>
+
+    <div class="outter-div" style="font-size: x-large;">
+        {{ message }}
+    </div>
+
+    <div class="outter-div" *ngFor="let p of productList">
+
+        <div class="inner-div">
+            <div class="img-card"><img src="{{ p.imagePath }}" /></div>
+            <div class="det-card">
+
+                <div>
+                    <h2>{{ p.name }}</h2>
+                </div>
+
+                <div>
+                    <h3>{{ p.detail }}</h3>
+                </div>
+                <div>
+                    <h3>Cost : {{ p.costPerUnit }}.00 Rs</h3>
+                </div>
+                <div>
+                    <button class="btn-buy-now" style="width: 100px;" (click)="buyNow(p.id)">Buy Now</button>
+                </div>
+            </div>
+            <div style="width: 100%;"><button class="btn-buy-now" style="width: 200px;" (click)="eligibilityCheck()">Check Eligibility</button></div>
+
+        </div>
+
+    </div>

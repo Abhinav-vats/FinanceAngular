@@ -1,0 +1,184 @@
+<div class="outter-div">
+    <div class="form-div">
+        <div>
+            <h2>Updating!!</h2>
+        </div>
+        <div class="form-inner-div">
+
+            <form #updateForm="ngForm" (ngSubmit)="updateUser(updateForm)">
+
+                <div class="input-div">
+                    <label for="firstName">First Name</label>
+
+                    <input type="text" name="firstname" required minlength="4" [(ngModel)]=customer.firstName #firstname="ngModel" />
+
+                </div>
+
+                <div *ngIf="updateForm.submitted && firstname.invalid">
+                    <div class="input-div" *ngIf="firstname.errors.required">
+                        <span class="sp-alert">First Name is required.</span>
+                    </div>
+                    <div class="input-div" *ngIf="firstname.errors.minlength">
+                        <span class="sp-alert">First Name must be at least 4 characters long.</span>
+                    </div>
+                </div>
+
+                <label for="midName">Middle Name</label>
+                <div class="input-div"><input type="text" name="midname" [(ngModel)]=customer.middleName />
+                </div>
+
+                <label for="lastName">Last Name</label>
+                <div class="input-div"><input type="text" name="lastname" required minlength="4" [(ngModel)]=customer.lastName #lastname="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="updateForm.submitted && lastname.invalid">
+                    <div class="input-div" *ngIf="lastname.errors.required">
+                        <span class="sp-alert">Last Name is required.</span>
+                    </div>
+                    <div class="input-div" *ngIf="lastname.errors.minlength">
+                        <span class="sp-alert">Last Name must be at least 4 characters long.</span>
+                    </div>
+                </div>
+                <label for="dob">Date of Birth</label>
+                <div class="input-div"><label for="dob">Date of Birth</label><input type="date" required style="width: 190px;" name="dob" [(ngModel)]=customer.dateOfBirth #dateofbirth="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="updateForm.submitted && dateofbirth.invalid">
+                    <div class="input-div" *ngIf="dateofbirth.errors.required">
+                        <span class="sp-alert">Date of birth is required.</span>
+                    </div>
+                </div>
+                <label for="Email">Email</label>
+                <div class="input-div"><input type="email" name="Email" [(ngModel)]=customer.email #email="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="updateForm.submitted && email.invalid">
+                    <div class="input-div" *ngIf="email.errors.required">
+                        <span class="sp-alert">Email is required.</span>
+                    </div>
+                </div>
+
+                <label for="phone">Phone Number</label>
+                <div class="input-div"><input type="tel" required minlength="10" maxlength="13" name="phone" [(ngModel)]=customer.phoneNumber #phonenumber="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+                <div *ngIf="updateForm.submitted && phonenumber.invalid">
+                    <div class="input-div" *ngIf="phonenumber.errors.required">
+                        <span class="sp-alert"> Phone number is required.</span>
+                    </div>
+                    <div class="input-div" *ngIf="phonenumber.errors.minlength">
+                        <span class="sp-alert">Phone number must be of minimum 10 digits and maximum 13 digits.</span>
+                    </div>
+                </div>
+
+                <label for="card_type">Card Type</label>
+                <div class="input-div">
+                    <input type="radio" style="width: 45px;" name="card_type" id="card_type_gold" value="GOLD" [(ngModel)]=customer.cardType>
+                    <label for="card_type_gold">Gold</label>
+                    <input type="radio" style="width: 45px;" name="card_type" id="card_type_titanium" value="TITANIUM" [(ngModel)]=customer.cardType /><label for="card_type_titanium">Titanium</label>
+                </div>
+
+
+
+                <div class="input-div"><label for="bank">Bank: </label>
+                    <select name="bank" id="bank" required [(ngModel)]=customer.bankName #bank="ngModel">
+                        <option name="HDFC" id="HDFC" value="HDFC">HDFC
+                        <option name="ICICI" id="ICICI" value="ICICI">ICICI
+                        <option name="SBI" id="SBI" value="SBI">SBI
+                        <option name="IDBI" id="IDBI" value="IDBI">IDBI
+                        <option name="Axis" id="Axis" value="Axis">Axis
+                    </select>
+                    <span class="sp-alert">*</span>
+                </div>
+                <label for="accno">Account Number</label>
+                <div class="input-div"><input type="text" name="accno" [(ngModel)]=customer.bankAccountNumber #bankAccountNumber="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="updateForm.submitted && bankAccountNumber.invalid">
+                    <div class="input-div" *ngIf="bankAccountNumber.errors.required">
+                        <span class="sp-alert"> Account number is required.</span>
+                    </div>
+                </div>
+
+                <label for="ifsc">IFSC Code</label>
+                <div class="input-div"><input type="text" name="ifsc" [(ngModel)]=customer.ifsCode #ifsc="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="updateForm.submitted && ifsc.invalid">
+                    <div class="input-div" *ngIf="ifsc.errors.required">
+                        <span class="sp-alert"> IFS code is required.</span>
+                    </div>
+                </div>
+                <label for="address">Address</label>
+                <div class="input-div"><textarea type="text" name="address" [(ngModel)]=customer.address #address="ngModel"></textarea>
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="updateForm.submitted && address.invalid">
+                    <div class="input-div" *ngIf="address.errors.required">
+                        <span class="sp-alert"> Address is required.</span>
+                    </div>
+                </div>
+                <label for="username">Username</label>
+                <div class="input-div"><input type="text" name="username" required minlength="8" [(ngModel)]=customer.username #username="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+
+                <div *ngIf="updateForm.submitted && username.invalid">
+                    <div class="input-div" *ngIf="username.errors.required">
+                        <span class="sp-alert"> Username is required.</span>
+                    </div>
+                    <div class="input-div" *ngIf="username.errors.minlength">
+                        <span class="sp-alert"> Username must be minimum of 8 characters.</span>
+                    </div>
+                </div>
+
+                <div class="input-button">
+                    <button class="btn-reg" (click)="checkUsername()" type="button">Is username availability?</button>
+                    <!-- on click check availability of username-->
+                </div>
+
+                <div class="input-div" *ngIf="usernameStatus"><span class="sp-success" *ngIf="usernameMessage">{{ usernameMessage }}</span></div>
+                <div class="input-div" *ngIf="!usernameStatus"><span class="sp-alert" *ngIf="usernameMessage">{{ usernameMessage }}</span></div>
+                <!-- if username not available print alert message here-->
+
+                <label for="pass">Password</label>
+                <div class="input-div"><input type="password" name="pass" required minlength="8" [(ngModel)]=customer.password #password="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="updateForm.submitted && password.invalid">
+                    <div class="input-div" *ngIf="password.errors.required">
+                        <span class="sp-alert"> Password is required.</span>
+                    </div>
+                    <div class="input-div" *ngIf="password.errors.minlength">
+                        <span class="sp-alert"> Password must be minimum of 8 characters.</span>
+                    </div>
+                </div>
+
+                <label for="cnfpass">Confirm Password</label>
+                <div class="input-div"><input type="password" name="cnfpass" [(ngModel)]=confirmPassword /><span class="sp-alert">*</span></div>
+                <div class="input-div" *ngIf="confirmPassword!=customer.password"><span class="sp-alert">Password not matched</span></div>
+
+
+
+
+                <div class="input-button">
+                    <button class="btn-reg" type="submit">Update</button>
+
+                    <button type="reset" class="btn-cancel">Reset</button>
+                </div>
+                <div class="input-div" *ngIf="updateError">
+                    <span class="sp-alert"> {{ updateError }}</span>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

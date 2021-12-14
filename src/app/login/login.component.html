@@ -1,0 +1,62 @@
+<navbar></navbar>
+<div class="outter-div">
+    <div class="form-div">
+        <div>
+            <h2>Login</h2>
+        </div>
+        <div class="form-inner-div">
+
+
+            <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)">
+
+
+                <div class="input-div">
+                    <input type="text" placeholder="Enter Username" name="uname" required minlength="8"
+                        [(ngModel)]=login.username #username="ngModel">
+                </div>
+                <div *ngIf="loginForm.submitted && username.invalid">
+                    <div class="input-div" *ngIf="username.errors.required">
+                        <span class="sp-alert"> Username is required.</span>
+                    </div>
+                    <div class="input-div" *ngIf="username.errors.minlength">
+                        <span class="sp-alert"> Username must be minimum of 8 characters.</span>
+                    </div>
+                </div>
+
+                <div class="input-div">
+                    <input type="password" placeholder="Enter Password" name="psw" required minlength="8"
+                        [(ngModel)]=login.password #password="ngModel"><br />
+                </div>
+                <div *ngIf="loginForm.submitted && password.invalid">
+                    <div class="input-div" *ngIf="password.errors.required">
+                        <span class="sp-alert"> Password is required.</span>
+                    </div>
+                    <div class="input-div" *ngIf="password.errors.minlength">
+                        <span class="sp-alert"> Password must be minimum of 8 characters.</span>
+                    </div>
+                </div>
+
+                <div class="input-div"><label>User Type </label>
+                    <input type="radio" style="width: 45px;" name="user_type" id="user_type" value="Customer"
+                        [(ngModel)]=login.userType>Customer
+                    <input type="radio" style="width: 45px;" name="user_type" id="user_type" value="Admin"
+                        [(ngModel)]=login.userType>Admin
+
+                </div>
+
+
+                <div class="input-button">
+                    <button class="btn-login" type="submit">Login</button>
+
+                </div>
+                <div class="input-div" *ngIf="message"><span class="sp-alert"
+                        style="font-size: large;">{{ message }}</span></div>
+                <span class="psw"><a [routerLink]="'/forgetpassword'">Forgot password?</a></span> <br />
+
+                <span>New user? <a [routerLink]="'/register'">Register here</a></span>
+
+            </form>
+
+        </div>
+    </div>
+</div>

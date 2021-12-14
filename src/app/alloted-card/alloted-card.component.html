@@ -1,0 +1,49 @@
+<div class="outter-div">
+    <div class="form-div">
+        <div>
+
+            <h2>Card Alloted</h2>
+        </div>
+        <div class="form-inner-div">
+
+            <form #allotForm="ngForm" (ngSubmit)="allotcard(allotForm)">
+
+
+                <div class="input-div"><input type="text" name="cardcvv" required placeholder="Cvv No." [(ngModel)]=allotedCard.cardCvvNo #cvvno="ngModel"></div>
+                <div *ngIf="allotForm.submitted && cvvno.invalid">
+                    <div class="input-div" *ngIf="cvvno.errors.required">
+                        <span class="sp-alert"> Cvv No. is required.</span>
+                    </div>
+
+                </div>
+
+
+                <div class="input-div"><input type="text" name="cardNo" placeholder="Card No" required [(ngModel)]=allotedCard.cardNo #cardno="ngModel"></div>
+                <div *ngIf="allotForm.submitted && cardno.invalid">
+                    <div class="input-div" *ngIf="cardno.errors.required">
+                        <span class="sp-alert"> Card No. is required.</span>
+                    </div>
+
+                </div>
+
+                <div class="input-div"><input type="date" name="validity" required [(ngModel)]=allotedCard.validity #valid="ngModel"></div>
+                <label for="validity">Valid Till</label>
+                <div *ngIf="allotForm.submitted && valid.invalid">
+                    <div class="input-div" *ngIf="valid.errors.required">
+                        <span class="sp-alert"> Date is required.</span>
+                    </div>
+
+                </div>
+
+                <div class="input-button">
+                    <button class="btn-reg" type="submit">Alloted</button>
+
+                </div>
+                <div class="input-div">
+                    <span class="sp-alert">{{ message }}</span>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

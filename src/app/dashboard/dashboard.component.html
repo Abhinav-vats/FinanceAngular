@@ -1,0 +1,178 @@
+<div class="outter-div">
+    <div>
+        <h2>Dashboard</h2>
+    </div>
+    <div class="det-card">
+        <div class="lab">
+            <div class="inner-lab">Card Number:</div>
+            <div class="data">
+                {{ cardDashboardDetai?.cardNo }}
+            </div>
+        </div>
+        <div class="lab">
+            <div class="inner-lab">Name:</div>
+            <div class="data">
+                {{ cardDashboardDetai?.name }}
+            </div>
+        </div>
+        <div class="lab">
+            <div class="inner-lab">
+                Cvv No:
+            </div>
+            <div class="data">
+                {{ cardDashboardDetai?.cvvNo }}
+            </div>
+        </div>
+        <div class="lab">
+            <div class="inner-lab">Card Type:</div>
+            <div class="data">
+                {{ cardDashboardDetai?.cardType }}
+            </div>
+        </div>
+
+        <div class="activation-status" *ngIf="notActive">
+            {{ cardDashboardDetai?.cardActivity }}
+        </div>
+        <div class="activation-status" *ngIf="active">
+            {{ cardDashboardDetai?.cardActivity }}
+        </div>
+    </div>
+    <div>
+        <br/>
+    </div>
+    <div class="det-card">
+        <div class="lab">
+            <div class="inner-lab">
+                Total Credit :
+            </div>
+            <div class="data">
+                {{ cardDashboardDetai?.totalCredit }}
+            </div>
+        </div>
+        <div class="lab">
+            <div class="inner-lab">
+                Credit Used :
+            </div>
+            <div class="data">
+                {{ cardDashboardDetai?.creditUsed }}
+            </div>
+        </div>
+        <div class="lab">
+            <div class="inner-lab">
+                Credit Remaining :
+            </div>
+            <div class="data">
+                {{ cardDashboardDetai?.creditRemaining }}
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <h2>Current Months Scheduled Payment</h2>
+    </div>
+    <div class="credit-det-card">
+        <table>
+            <tr>
+                <th>Product Name</th>
+                <th>Amount</th>
+                <th>Amount Paid</th>
+                <th>Balance</th>
+                <th>Pay Now</th>
+            </tr>
+            <tr *ngFor="let  p of productList">
+                <td>
+                    {{ p.productName }}
+                </td>
+                <td>
+                    {{ p.amount }}
+                </td>
+                <td>
+                    {{ p.paid }}
+                </td>
+                <td>
+                    {{ p.amount - p.paid }}
+                </td>
+                <td>
+                    <button class="btn-reg" (click)="payForThisSchedule(p.paymentId)">Pay Installment</button>
+                </td>
+
+            </tr>
+
+        </table>
+    </div>
+    <div class="credit-det-card" *ngIf="productListError">
+        {{ productListError }}
+    </div>
+
+
+    <div>
+        <h2>My Orders</h2>
+    </div>
+    <div class="credit-det-card">
+        <table>
+            <tr>
+                <th>Product Name</th>
+                <th>Product Category</th>
+                <th>Amount</th>
+                <th>Amount Paid</th>
+                <th>Balance</th>
+
+            </tr>
+            <tr *ngFor="let p of orderList">
+                <td>
+                    {{ p.productName }}
+                </td>
+                <td>
+                    {{ p.category }}
+                </td>
+                <td>
+                    {{ p.productPrice }}
+                </td>
+                <td>
+                    {{ p.amountPaid }}
+                </td>
+                <td>
+                    {{ p.productPrice - p.amountPaid }}
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="credit-det-card" *ngIf="myOrderListError">
+        {{ myOrderListError }}
+    </div>
+
+
+    <div>
+        <h2>Transaction in Last 30 Days</h2>
+    </div>
+    <div class="credit-det-card" *ngIf="transactionList">
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Date</th>
+                <th>Amount Paid</th>
+
+            </tr>
+            <tr *ngFor="let t of transactionList">
+                <td>
+                    {{ t.productName }}
+                </td>
+                <td>
+                    {{ t.paymentDate }}
+                </td>
+                <td>
+                    {{ t.amount }}
+                </td>
+
+            </tr>
+
+        </table>
+    </div>
+    <div class="credit-det-card" *ngIf="transactionListError">
+        {{ transactionListError }}
+    </div>
+</div>
+<div class="outer-div-err" *ngIf="errMessage">
+    {{errMessage}}
+</div>

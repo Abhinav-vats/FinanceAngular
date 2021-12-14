@@ -1,0 +1,65 @@
+.inner-lab {
+    float: bottom;
+    text-align: left;
+    width: 500px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.lab {
+    font-size: large;
+    padding-bottom: 20px;
+}
+
+.form-div {
+    background-color: #dfd9d9;
+    margin: auto;
+    width: 500px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    border: 5px solid #a7a4a4;
+    border-radius: 10px;
+}
+
+.input-div input {
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
+    height: 20px;
+}
+
+.input-div select {
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    height: 40px;
+}
+
+.btn-reg {
+    background-color: #2f7004;
+    width: 60%;
+    color: white;
+    outline: none !important;
+    border-color: #265c04;
+    height: 40px;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.data {
+    text-align: left;
+    font-weight: bold;
+    display: inline;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding-top: 1px;
+}
+
+.form-inner-div {
+    width: auto;
+    text-align: left;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+}

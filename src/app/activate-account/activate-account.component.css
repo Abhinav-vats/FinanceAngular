@@ -1,0 +1,51 @@
+.outter-div {
+    height: 400px;
+}
+
+.form-div {
+    background-color: #ffffff;
+    margin: auto;
+    width: 400px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    border: 5px solid #a7a4a4;
+    border-radius: 10px;
+}
+
+.form-inner-div {
+    width: auto;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+}
+
+.input-div {
+    display: inline;
+    padding: 10px;
+}
+
+.input-div input {
+    margin: 10px;
+    width: 20px;
+    height: 15px;
+}
+
+.btn-reg {
+    background-color: #69b933;
+    width: 40%;
+    color: white;
+    outline: none !important;
+    border-color: #265c04;
+    height: 40px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.input-div:focus {
+    outline: none !important;
+    border-color: #2a4d70;
+    box-shadow: 0 0 10px #8ac1f5;
+}

@@ -1,0 +1,16 @@
+<div class="navbar" *ngIf="user==null">
+    <a [routerLink]="'/'">Skylark Finance</a>
+    <a [routerLink]="'/login'" style="float: right;">Login</a>
+    <a [routerLink]="'/register'" style="float: right;">Register</a>
+</div>
+<div class="navbar" *ngIf="user==admin">
+    <a [routerLink]="'/'">Skylark Finance</a>
+    <a [routerLink]="'/logout'" style="float: right;">Logout</a>
+
+</div>
+<div class="navbar" *ngIf="user==customer">
+    <a [routerLink]="'/'">Skylark Finance</a>
+    <a [routerLink]="'/logout'" style="float: right;">Logout</a>
+    <a [routerLink]="'/dashboard'" style="float: right;">Welcome, {{ dashboard }}</a>
+
+</div>

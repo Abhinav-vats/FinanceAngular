@@ -1,0 +1,206 @@
+<div class="outter-div">
+    <div class="form-div">
+        <div>
+            <h2>Register Yourself</h2>
+        </div>
+        <div class="form-inner-div">
+
+            <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
+                <div class="input-div" style="color: red;">* required field</div>
+
+                <div class="input-div"><input type="text" name="firstname" required minlength="4" placeholder="First Name" [(ngModel)]=customer.firstName #firstname="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="registerForm.submitted && firstname.invalid">
+                    <div class="input-div" *ngIf="firstname.errors.required">
+                        <span class="sp-alert">First Name is required.</span>
+                    </div>
+                    <div class="input-div" *ngIf="firstname.errors.minlength">
+                        <span class="sp-alert">First Name must be at least 4 characters long.</span>
+                    </div>
+                </div>
+
+                <div class="input-div"><input type="text" name="midname" placeholder="Middle Name" [(ngModel)]=customer.middleName />
+                </div>
+
+
+                <div class="input-div"><input type="text" name="lastname" required minlength="4" placeholder="Last Name" [(ngModel)]=customer.lastName #lastname="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="registerForm.submitted && lastname.invalid">
+                    <div class="input-div" *ngIf="lastname.errors.required">
+                        <span class="sp-alert">Last Name is required.</span>
+                    </div>
+                    <div class="input-div" *ngIf="lastname.errors.minlength">
+                        <span class="sp-alert">Last Name must be at least 4 characters long.</span>
+                    </div>
+                </div>
+
+                <div class="input-div"><label for="dob">Date of Birth</label><input type="date" required style="width: 190px;" name="dob" [(ngModel)]=customer.dateOfBirth #dateofbirth="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="registerForm.submitted && dateofbirth.invalid">
+                    <div class="input-div" *ngIf="dateofbirth.errors.required">
+                        <span class="sp-alert">Date of birth is required.</span>
+                    </div>
+                </div>
+
+                <div class="input-div"><input type="email" name="Email" required placeholder="Email Id" [(ngModel)]=customer.email #email="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="registerForm.submitted && email.invalid">
+                    <div class="input-div" *ngIf="email.errors.required">
+                        <span class="sp-alert">Email is required.</span>
+                    </div>
+                </div>
+
+                <div class="input-button">
+                    <button class="btn-reg" (click)="sendOtp()" type="button">Send OTP</button>
+                </div>
+                <div class="input-div"><span class="sp-success" *ngIf="sendConfirm">{{ sendConfirm }}</span></div>
+                <div class="input-div"><span class="sp-alert" *ngIf="sendFail">{{ sendFail }}</span></div>
+
+                <div class="input-div"><input type="text" name="otp" required placeholder="Enter the OTP recieved on your mail" [(ngModel)]="emailOtp" #otp="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+                <div *ngIf="registerForm.submitted && otp.invalid">
+                    <div class="input-div" *ngIf="otp.errors.required">
+                        <span class="sp-alert">OTP is required.</span>
+                    </div>
+                </div>
+
+
+                <div class="input-button">
+                    <button class="btn-reg" type="button" (click)="verify()">Verify OTP</button>
+                    <!-- add otp check function -->
+                </div>
+
+                <div class="input-div"><span class="sp-success" *ngIf="otpSuccess">{{ otpSuccess }}</span></div>
+                <div class="input-div"><span class="sp-alert" *ngIf="otpFail">{{ otpFail }}</span></div>
+
+                <div class="input-div"><input type="tel" required minlength="10" maxlength="13" name="phone" placeholder="Phone number" [(ngModel)]=customer.phoneNumber #phonenumber="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+                <div *ngIf="registerForm.submitted && phonenumber.invalid">
+                    <div class="input-div" *ngIf="phonenumber.errors.required">
+                        <span class="sp-alert"> Phone number is required.</span>
+                    </div>
+                    <div class="input-div" *ngIf="phonenumber.errors.minlength">
+                        <span class="sp-alert">Phone number must be of minimum 10 digits and maximum 13 digits.</span>
+                    </div>
+                </div>
+
+
+                <div class="input-div"><label>Card Type </label>
+                    <input type="radio" style="width: 45px;" name="card_type" id="card_type_gold" value="GOLD" [(ngModel)]=customer.cardType>
+                    <label for="card_type_gold">Gold</label>
+                    <input type="radio" style="width: 45px;" name="card_type" id="card_type_titanium" value="TITANIUM" [(ngModel)]=customer.cardType /><label for="card_type_titanium">Titanium</label>
+                </div>
+
+
+
+                <div class="input-div"><label for="bank">Bank: </label>
+                    <select name="bank" id="bank" required [(ngModel)]=customer.bankName #bank="ngModel">
+                        <option name="HDFC" id="HDFC" value="HDFC">HDFC
+                        <option name="ICICI" id="ICICI" value="ICICI">ICICI
+                        <option name="SBI" id="SBI" value="SBI">SBI
+                        <option name="IDBI" id="IDBI" value="IDBI">IDBI
+                        <option name="Axis" id="Axis" value="Axis">Axis
+                    </select>
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div class="input-div"><input type="text" name="accno" required placeholder="Account Number" [(ngModel)]=customer.bankAccountNumber #bankAccountNumber="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="registerForm.submitted && bankAccountNumber.invalid">
+                    <div class="input-div" *ngIf="bankAccountNumber.errors.required">
+                        <span class="sp-alert"> Account number is required.</span>
+                    </div>
+                </div>
+
+
+                <div class="input-div"><input type="text" name="ifsc" required placeholder="IFSC code" [(ngModel)]=customer.ifsCode #ifsc="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="registerForm.submitted && ifsc.invalid">
+                    <div class="input-div" *ngIf="ifsc.errors.required">
+                        <span class="sp-alert"> IFS code is required.</span>
+                    </div>
+                </div>
+
+                <div class="input-div"><textarea type="text" name="address" required placeholder="Address" [(ngModel)]=customer.address #address="ngModel"></textarea>
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="registerForm.submitted && address.invalid">
+                    <div class="input-div" *ngIf="address.errors.required">
+                        <span class="sp-alert"> Address is required.</span>
+                    </div>
+                </div>
+
+                <div class="input-div"><input type="text" name="username" required minlength="8" placeholder="Username" [(ngModel)]=customer.username #username="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="registerForm.submitted && username.invalid">
+                    <div class="input-div" *ngIf="username.errors.required">
+                        <span class="sp-alert"> Username is required.</span>
+                    </div>
+                    <div class="input-div" *ngIf="username.errors.minlength">
+                        <span class="sp-alert"> Username must be minimum of 8 characters.</span>
+                    </div>
+                </div>
+
+                <div class="input-button">
+                    <button class="btn-reg" (click)="checkUsername()" type="button">Is username availability?</button>
+                    <!-- on click check availability of username-->
+                </div>
+
+                <div class="input-div" *ngIf="usernameStatus"><span class="sp-success" *ngIf="usernameMessage">{{ usernameMessage }}</span></div>
+                <div class="input-div" *ngIf="!usernameStatus"><span class="sp-alert" *ngIf="usernameMessage">{{ usernameMessage }}</span></div>
+                <!-- if username not available print alert message here-->
+
+
+                <div class="input-div"><input type="password" name="pass" required minlength="8" placeholder="Password" [(ngModel)]=customer.password #password="ngModel" />
+                    <span class="sp-alert">*</span>
+                </div>
+
+                <div *ngIf="registerForm.submitted && password.invalid">
+                    <div class="input-div" *ngIf="password.errors.required">
+                        <span class="sp-alert"> Password is required.</span>
+                    </div>
+                    <div class="input-div" *ngIf="password.errors.minlength">
+                        <span class="sp-alert"> Password must be minimum of 8 characters.</span>
+                    </div>
+                </div>
+
+
+                <div class="input-div"><input type="password" name="cnfpass" placeholder="Confirm Password" [(ngModel)]=confirmPassword /><span class="sp-alert">*</span></div>
+                <div class="input-div" *ngIf="confirmPassword!=customer.password"><span class="sp-alert">Password not matched</span></div>
+
+
+
+
+                <div class="input-button">
+                    <button class="btn-reg" type="submit">Register</button>
+
+                    <button type="reset" class="btn-cancel">Reset</button>
+                </div>
+                <div class="input-div" *ngIf="registerError">
+                    <span class="sp-alert"> {{ registerError }}</span>
+                </div>
+                <div class="input-div" *ngIf="registerSuccess">
+                    <span class="sp-success"> {{ registerSuccess }}</span>
+                </div>
+            </form>
+        </div>
+        <div class="inner-al">Already have account? <a [routerLink]="'/login'">Login Here</a></div>
+    </div>
+</div>

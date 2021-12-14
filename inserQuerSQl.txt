@@ -1,0 +1,93 @@
+
+
+
+
+
+
+
+
+===Plan Type =====
+insert into plan_type values(1,3,'3 months');
+insert into plan_type values(2,6,'6 months');
+insert into plan_type values(3,9,'9 months');
+insert into plan_type values(4,12,'12 months');
+
+
+
+
+====Card_type====
+insert into card_type_detail(id, card_type, maximum_limit, joining_fee) values(1, 'GOLD', 100000.00, 500);
+	
+insert into card_type_detail(id, card_type, maximum_limit, joining_fee) values(2, 'TITANIUM', 400000.00, 1000);
+
+
+
+
+===Product_detail ======
+
+
+alter table product_detail modify image_path varchar2(80);
+alter table product_detail modify detail varchar2(80);
+
+insert into product_detail values(1,'Phone','iphone 7','Apple','Electronic'
+,'Water and dust resistant,12MP Wide camera with Auto HDR ','https://images-na.ssl-images-amazon.com/images/I/41S3YL7U7ML._SL1000_.jpg',50,30000,3000);
+
+
+insert into product_detail values(2,'iphone','iphone 11','Apple','Electronic'
+,'Apple iPhone 11 Pro (64GB),A13 Bionic chip ','https://images-na.ssl-images-amazon.com/images/I/61VK5q8L-oL._SL1024_.jpg',50,106600,6000);
+
+
+insert into product_detail values(3,'Phone','OnePlus 8','OnePlus','Electronic'
+,'OnePlus 8 (Glacial Green 6GB RAM+128GB Storage)','https://images-na.ssl-images-amazon.com/images/I/619iTNHSCGL._SL1500_.jpg',60, 41999,4000);
+
+
+
+
+
+
+
+insert into product_detail values(4,'Camera','Sony Alpha ILCE','Sony','Electronic'
+,'Full-Frame 24.2MP','https://images-na.ssl-images-amazon.com/images/I/71CWotTQT4L._SL1500_.jpg',60,900000,8000);
+
+insert into product_detail values(5,'RoboMaster','Robot (2nd Gen.) S1','DJI','Electronic'
+,'Educational Robot STEM Toy Robomaster S1 with Programmable Modules','https://images-na.ssl-images-amazon.com/images/I/51T5Jlje5VL._SL1200_.jpg',50, 44000,4000);
+
+
+insert into product_detail values(6,'Phone','Samsung Galaxy A71','Samsung','Electronic'
+,'Prism Crush Blue, 8GB RAM, 128GB Storage','https://images-na.ssl-images-amazon.com/images/I/71qI1h%2B05qL._SL1500_.jpg',50, 30000,500);
+
+
+
+
+
+==========customer_user_detail==========
+
+
+insert into customer_user_detail values(1,'Nupur','','Jain',TO_DATE('04/02/1997','DD/MM/YYYY'),'9897713548'
+,'nupurjain@gmail.com','lewis123','lewis123','	Tropical Industry near G.G.I.C road'
+,'GOLD','HDFC','4270238054174567','HDFC0000225','false');
+
+
+
+insert into customer_user_detail values(2,'Abhinav','Kumar','Singh',TO_DATE('02/02/1997','DD/MM/YYYY'),'94541602521',
+'abhi123up@gmail.com','abhi123','abhi123','Delhi CP k-15 ','GOLD','ICIC','3270238084174569','ICIC0000164','false');
+
+
+insert into customer_user_detail values(3,'Rohit','Kumar','Rao',TO_DATE('06/07/1998','DD/MM/YYYY'),'9518828585','rohitrao1967@gmail.com','Rohit541','Rohit541','Rajasthan CP k-17 ','TITANIUM','SBI','6980275084174565','SBIN0005943','false');
+
+
+insert into customer_user_detail values(4,'Anvesh','Kumar','Rao',TO_DATE('08/05/1997','DD/MM/YYYY'),'8827620585'
+,'anveshChouhan.5@gmail.com','Anvesh111','Anvesh11','Noida CP F-17 ',
+'TITANIUM','Axis','5687275084174500','UTIB0000093','false');
+
+
+================
+
+SQL> insert into document_upload(id, user_id, document_type, document_path) valu
+es(1, 1, 'Aadhar Card', 'https://drive.google.com/file/d/1ESEE6dB9Pt9C5m4wjITrz9
+eOnNm4HQIr/view?usp=sharing');
+========upload document====
+insert into document_upload(id, user_id, document_type, document_path) values(1, 1, 'Aadhar Card', 'https://drive.google.com/file/d/1ESEE6dB9Pt9C5m4wjITrz9eOnNm4HQIr/view?usp=sharing');
+insert into document_upload(id, user_id, document_type, document_path) values(2, 1, 'Pan Card', 'https://drive.google.com/file/d/1esw8HHeKWxhk0bTudFwpWHOaS87owZcK/view?usp=sharing');
+
+insert into document_upload(id, user_id, document_type, document_path) values(3, 1, 'Blank Cheque', 'https://drive.google.com/file/d/1ewsPdC8SJBhtjySNpUvpP2mui-C8xcCD/view?usp=sharing');

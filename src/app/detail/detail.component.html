@@ -1,0 +1,74 @@
+<div class="outter-div">
+    <div class="form-div">
+        <div class="inner-div">
+            <div>
+                <h2> User Details </h2>
+            </div>
+
+            <div class="product-list" *ngIf="errMessage==null">
+                <div class="lab">
+                    <div class="inner-lab">
+                        First Name : {{userDetailDto.firstName}}
+                    </div>
+
+                    <div class="inner-lab">
+                        Middle Name : {{userDetailDto.middleName}}
+                    </div>
+                    <div class="inner-lab">
+                        Last Name : {{userDetailDto.lastName}}
+                    </div>
+                    <div class="inner-lab">
+                        Date of Birth : {{userDetailDto.dateOfBirth}}
+                    </div>
+                    <div class="inner-lab">
+                        Email : {{userDetailDto.email}}
+                    </div>
+
+                    <div class="inner-lab">
+                        Phone No. : {{userDetailDto.phoneNumber}}
+                    </div>
+                    <div class="inner-lab">
+                        Username : {{userDetailDto.username}}
+                    </div>
+                    <div class="inner-lab">
+                        Address: {{userDetailDto.address}}
+                    </div>
+                    <div class="inner-lab">
+                        Card Type : {{userDetailDto.cardType}}
+                    </div>
+                    <div class="inner-lab">
+                        Bank Name : {{userDetailDto.bankName}}
+                    </div>
+                    <div class="inner-lab">
+                        Bank Account Number : {{userDetailDto.bankAccountNumber}}
+                    </div>
+                    <div class="inner-lab">
+                        IFS Code : {{userDetailDto.ifsCode}}
+                    </div>
+                    <div class="inner-lab">
+                        Aadhar : <a href="aadhar" download="Aadhar"><button class="btn-reg" >Download Aadhar Card</button></a>
+                    </div>
+                    <div class="inner-lab">
+                        Pan Card : <a href="{{ panCard }}" target="_blank" download="PanCard"><button class="btn-reg" >Download Pan Card</button></a>
+                    </div>
+                    <div class="inner-lab">
+                        Blank Cheque : <a href="blankCheque" download="BlankCheque"><button class="btn-reg" >Download Blank Cheque</button></a>
+                    </div>
+
+                </div>
+                <!--<td><button class="btn-reg" (click)="activateUser()">Activate</button></td>-->
+                <!--  <td><button class="btn-reg" (click)="activateUser()">Activate</button></td>-->
+
+                <!--   <td><button class="btn-reg " (click)="deleteUser(userDetailDto) ">Delete</button></td>-->
+                <td><button class="btn-reg" (click)="cancel()">Cancel</button></td>
+            </div>
+            <div class="product-list" *ngIf="errMessage">
+                {{ errMessage }}
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<div class="outter-div">
+
+    <div class="table-res" *ngIf="nonactiveUserTable">
+        <div>
+            <h2>Non Active User Details </h2>
+        </div>
+
+        <table>
+
+            <tr>
+                <th>Id</th>
+                <th> Name</th>
+
+                <th>Username</th>
+
+                <th>View Details</th>
+
+
+            </tr>
+
+
+            <tr *ngFor="let p of nonActiveUserList;">
+
+                <td>{{p.id}}</td>
+                <td>{{p.firstName}} {{p.middleName}} {{p.lastName}}</td>
+
+
+                <td>{{p.username}}</td>
+
+                <td><button class="btn-reg" (click)="detail(p.id)">View Detail</button></td>
+
+                <!-- <td><button class="btn-reg" (click)="activateUser(p)">Activate</button></td>-->
+
+
+            </tr>
+            <tr></tr>
+        </table>
+    </div>
+
+
+    <div class="table-res" *ngIf="activeUserTable">
+
+        <div>
+            <h2>Active User Details </h2>
+        </div>
+
+        <table>
+
+            <tr>
+
+                <th>Id</th>
+                <th>Name</th>
+
+                <th>Username</th>
+                <th>View Details</th>
+                <!-- <th>Edit</th>-->
+                <th>Delete</th>
+
+
+
+            </tr>
+
+
+            <tr *ngFor=" let p of activeUserList; ">
+
+                <!--  <div *ngIf="p.isActive==False "></div>-->
+
+                <td>{{p.id}}</td>
+                <td>{{p.firstName}} {{p.middleName}} {{p.lastName}}</td>
+
+                <td>{{p.username}}</td>
+
+                <td><button class="btn-reg" (click)="detailActive(p.id)">View Detail</button></td>
+                <!--<td><button class="btn-reg " (click)="editUser(p.id)">Edit</button></td>-->
+                <td><button class="btn-reg " (click)="deleteUser(p) ">Delete</button></td>
+
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="input-div ">
+        <span class="sp-success " style="font-size: large; ">
+                    {{message}}
+                </span>
+    </div>
+
+
+</div>
